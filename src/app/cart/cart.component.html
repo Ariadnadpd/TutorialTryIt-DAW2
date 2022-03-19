@@ -1,0 +1,38 @@
+<h3 class="uppercase font-bold mx-auto py-2 max-w-6xl bg-gray-100 shadow-xl mb-8">Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency }}</span>
+</div>
+
+<div class="bg-gray-100 mx-auto max-w-6xl py-20 px-12 lg:px-24 shadow-xl mb-24 mt-8">
+    <p class="mb-5 tracking-wide font-bold "> Rellenar el formulario para el proceso de pago </p>
+    
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label for="name" class="tracking-wide">
+                Name
+            </label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+
+        <div>
+            <label for="address" class="tracking-wide">
+                Address
+            </label>
+            <input id="address" type="text" formControlName="address">
+        </div>
+        
+        <button class="button" type="submit">Purchase</button>
+
+    </form>
+
+    <p class="mt-8">
+        <a routerLink="/shipping">Shipping Prices</a>
+    </p>
+
+    <a [routerLink]="['/']" class="flex flex-direction row space-between align-items center ml-4">Back</a>
+</div>
+
+<!--<p>cart works!</p>-->

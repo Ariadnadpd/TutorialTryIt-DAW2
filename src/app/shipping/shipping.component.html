@@ -1,0 +1,8 @@
+<h3 class="uppercase mb-4 py-2 font-bold mx-auto max-w-6xl bg-white shadow-xl">Shipping Prices</h3>
+<!-- The async pipe returns the latest value from a stream of data -->
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+    <span>{{ shipping.type }}</span>
+    <span>{{ shipping.price | currency}}</span>
+</div>
+<a [routerLink]="['/cart']" >Back</a>
+<!--<p>shipping works!</p>-->
